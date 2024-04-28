@@ -1,0 +1,70 @@
+{
+  "toolbarLanding": {
+    "services": "Servicios",
+    "aboutUs": "Sobre Nosotros",
+    "plans": "Planes",
+    "testimonials": "Testimonios",
+    "login": "Iniciar sesión",
+    "signUp": "Regístrate"
+  },
+  "pageNotFound": {
+    "title": "Página no encontrada",
+    "thePath": "La ruta",
+    "notFound": "no existe.",
+    "home": "Regresar"
+  },
+  "login": {
+    "title": "Bienvenido a Carga Sin Estrés",
+    "signIn": "Inicia sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUp": "Regístrate"
+  },
+  "signUp": {
+    "title": "Bienvenido a Carga Sin Estrés",
+    "signUp": "Regístrate",
+    "accountType": "Por favor, elige el tipo de cuenta que deseas crear",
+    "continueAs": "Continuar como",
+    "company": "Empresa",
+    "customer": "Cliente",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Inicia sesión"
+  },
+  "companyForm": {
+    "title": "Bienvenido a Carga Sin Estrés",
+    "signUp": "Regístrate",
+    "companyName": "Razón social",
+    "address": "Dirección",
+    "phone": "Número de teléfono",
+    "url": "Enlace al logo de la empresa",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "selectServices": "Marque los servicios que ofrece su empresa",
+    "transport": "Transporte",
+    "load": "Carga",
+    "packing": "Embalaje",
+    "assembly": "Montaje",
+    "disassembly": "Desmontaje",
+    "description": "Descripción corta de la empresa",
+    "createAccount": "Crear cuenta",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Inicia sesión"
+  },
+  "customerForm": {
+    "title": "Bienvenido a Carga Sin Estrés",
+    "signUp": "Iniciar sesión",
+    "name": "Nombres",
+    "lastName": "Apellidos",
+    "birthDate": "Fecha de nacimiento",
+    "phone": "Número de teléfono",
+    "address": "Dirección",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "createAccount": "Crear cuenta",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Inicia sesión"
+  }
+}

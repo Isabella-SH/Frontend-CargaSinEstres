@@ -1,0 +1,70 @@
+{
+  "toolbarLanding": {
+    "services": "Services",
+    "aboutUs": "About us",
+    "plans": "Plans",
+    "testimonials": "Testimonials",
+    "login": "Login",
+    "signUp": "Sign up"
+  },
+  "pageNotFound": {
+    "title": "Page not found",
+    "thePath": "The path",
+    "notFound": "does not exist.",
+    "home": "Home"
+  },
+  "login": {
+    "title": "Welcome to Carga Sin Estrés",
+    "signIn": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signUp": {
+    "title": "Welcome to Carga Sin Estrés",
+    "signUp": "Sign up",
+    "accountType": "Please, select the type of account you want to create",
+    "continueAs": "Continue as",
+    "company": "Company",
+    "customer": "Customer",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  },
+  "companyForm": {
+    "title": "Welcome to Carga Sin Estrés",
+    "signUp": "Sign up",
+    "companyName": "Company name",
+    "address": "Address",
+    "phone": "Phone number",
+    "url": "Link to your company's logo",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "selectServices": "Select the services you offer",
+    "transport": "Transport",
+    "load": "Load",
+    "packing": "Packing",
+    "assembly": "Assembly",
+    "disassembly": "Disassembly",
+    "createAccount": "Create account",
+    "description": "Short description of your company",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  },
+  "customerForm": {
+    "title": "Welcome to Carga Sin Estrés",
+    "signUp": "Sign up",
+    "name": "Name",
+    "lastName": "Last name",
+    "birthDate": "Birth date",
+    "phone": "Phone number",
+    "address": "Address",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "createAccount": "Create account",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign in"
+  }
+}

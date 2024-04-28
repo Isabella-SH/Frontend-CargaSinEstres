@@ -1,0 +1,716 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Transporte y mudanzas Rapi2",
+      "photo": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logotipo-transporte-y-mudanzas-design-template-8ee4abec6c3d27c285e676c71f18c550_screen.jpg?ts=1626998647",
+      "email": "rapi2@gmail.com",
+      "direccion": "Miraflores",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": true,
+      "desmontaje": true,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 2,
+      "name": "Romabe transporte",
+      "photo": "https://transporteromabe.com/wp-content/uploads/2021/07/Mudanzas-de-Arequipa-a-Lima-2.jpg",
+      "email": "romabe@gmail.com",
+      "direccion": "Miraflores",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": false,
+      "montaje": false,
+      "desmontaje": false,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 3,
+      "name": "J&G Transporte y mudanzas",
+      "photo": "https://media.cylex.com.pe/companies/1119/5162/logo/logo56282673.jpg",
+      "email": "facilito@gmail.com",
+      "direccion": "Miraflores",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": false,
+      "desmontaje": false,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 4,
+      "name": "Mudate facil",
+      "photo": "https://www.zarla.com/images/zarla-mdate-fcil-1x1-2400x2400-20220329-q9j6rjmbw347xwbwmy3g.png?crop=1:1,smart&width=250&dpr=2",
+      "email": "facilito@gmail.com",
+      "direccion": "Miraflores",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": true,
+      "desmontaje": true,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 5,
+      "name": "Bodegas y mudanzas Santana",
+      "photo": "https://www.santanamudanzasybodegas.com/wp-content/uploads/2021/07/SANTANA-BODEGAS-Y-MUDANZAS-MUDANZAS-EN-CALI-MUDANZAS-NACIONALES-01.jpg",
+      "email": "bodegas@gmail.com",
+      "direccion": "San Isidro",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": false,
+      "montaje": false,
+      "desmontaje": false,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 6,
+      "name": "Practi Mudanza",
+      "photo": "https://practimudanza.com/wp-content/uploads/2020/11/LOGO-RECTANGULAR-PRACTIMUDANZA-RGB-LOGO-MUDANZAS-MUDANZAS-EN-CALI-EMPRESAS-DE-MUDANZAS-EN-CALI-01.png",
+      "email": "practi@gmail.com",
+      "direccion": "San Miguel",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": false,
+      "desmontaje": false,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 7,
+      "name": "Mudanzas Jurado",
+      "photo": "https://www.mudanzasjurado.com/uploads/UFOLSqyA/353x0_387x0/logo.jpg",
+      "email": "jurado@gmail.com",
+      "direccion": "San Miguel",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": true,
+      "desmontaje": true,
+      "description": "empresa",
+      "userType": "company"
+    },
+    {
+      "id": 8,
+      "name": "Mudanzas Plata",
+      "photo": "https://mudanzasplata.com/wp-content/uploads/2021/07/cropped-logo-mudannzas-plata-transparente.png",
+      "email": "plata@gmail.com",
+      "direccion": "Monterrico",
+      "numeroContacto": "912345678",
+      "password": "123456",
+      "confirmarpassword": "123456",
+      "transporte": true,
+      "carga": true,
+      "embalaje": true,
+      "montaje": true,
+      "desmontaje": false,
+      "description": "empresa",
+      "userType": "company"
+    }
+  ],
+  "bookingHistory": [
+    {
+      "id": 1,
+      "idCompany": 1,
+      "idClient": 1,
+      "bookingDate": "2023-07-15",
+      "pickupAddress": "Ate",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-07-25",
+      "movingTime": "08:00",
+      "status": "Finalizado",
+      "services": "Transporte, Carga, Embalaje, Montaje, Desmontaje",
+      "payment": {
+        "totalAmount": 350,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Transporte y mudanzas Rapi2",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo1.jpg"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "idCompany": 2,
+      "idClient": 1,
+      "bookingDate": "2023-08-16",
+      "pickupAddress": "Lince",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-08-21",
+      "movingTime": "11:30",
+      "status": "Finalizado",
+      "services": "Transporte, Carga, Embalaje",
+      "payment": {
+        "totalAmount": 250,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Romabe transporte",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo2.jpg"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "idCompany": 4,
+      "idClient": 1,
+      "bookingDate": "2023-09-10",
+      "pickupAddress": "Barranco",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-09-10",
+      "movingTime": "16:00",
+      "status": "Finalizado",
+      "services": "Transporte, Carga, Embalaje, Montaje, Desmontaje",
+      "payment": {
+        "totalAmount": 50,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Mudate Facil",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo3.png"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "idCompany": 5,
+      "idClient": 2,
+      "bookingDate": "2023-09-10",
+      "pickupAddress": "Barranco",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-09-10",
+      "movingTime": "16:00",
+      "status": "Finalizado",
+      "services": "Transporte, Carga, Embalaje, Montaje, Desmontaje",
+      "payment": {
+        "totalAmount": 350,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Bodegas y mudanzas Santana",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo4.png"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "idCompany": 6,
+      "idClient": 2,
+      "bookingDate": "2023-09-10",
+      "pickupAddress": "Barranco",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-09-10",
+      "movingTime": "16:00",
+      "status": "En curso",
+      "services": "Transporte, Carga, Embalaje, Montaje, Desmontaje",
+      "payment": {
+        "totalAmount": 350,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Practi Mudanza",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo5.png"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "idCompany": 7,
+      "idClient": 1,
+      "bookingDate": "2023-09-10",
+      "pickupAddress": "Barranco",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-09-10",
+      "movingTime": "16:00",
+      "status": "En curso",
+      "services": "Transporte, Carga, Embalaje, Montaje, Desmontaje",
+      "payment": {
+        "totalAmount": 350,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Mudanzas Jurado",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo6.png"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "idCompany": 8,
+      "idClient": 1,
+      "bookingDate": "2023-09-10",
+      "pickupAddress": "Barranco",
+      "destinationAddress": "Barranco",
+      "movingDate": "2023-09-10",
+      "movingTime": "16:00",
+      "status": "En curso",
+      "services": "Transporte, Carga, Embalaje",
+      "payment": {
+        "totalAmount": 350,
+        "paymentMethod": "Tarjeta de Crédito"
+      },
+      "hiredCompany": {
+        "name": "Mudanzas Plata",
+        "logo": "https://raw.githubusercontent.com/LuceroObispoRios/Grupo1_SW53/main/CargaSinEstres-V1/public-images/empresaLogo7.png"
+      },
+      "chat": [
+        {
+          "id": 1,
+          "user": "client",
+          "message": "Primer mensaje",
+          "dateTime": "2023-08-10 10:02:30"
+        },
+        {
+          "id": 2,
+          "user": "company",
+          "message": "Segundo mensaje",
+          "dateTime": "2023-08-10 10:07:50"
+        }
+      ]
+    },
+    {
+      "idCompany": 3,
+      "idClient": {
+        "userId": "1"
+      },
+      "bookingDate": "25-9-2023",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "25-9-2023",
+      "movingTime": "17:25",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "J&G Transporte y mudanzas",
+        "logo": "https://media.cylex.com.pe/companies/1119/5162/logo/logo56282673.jpg"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 8
+    },
+    {
+      "idCompany": 5,
+      "idClient": {
+        "userId": "1"
+      },
+      "bookingDate": "29-9-2023",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "29-9-2023",
+      "movingTime": "20:3",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Bodegas y mudanzas Santana",
+        "logo": "https://www.santanamudanzasybodegas.com/wp-content/uploads/2021/07/SANTANA-BODEGAS-Y-MUDANZAS-MUDANZAS-EN-CALI-MUDANZAS-NACIONALES-01.jpg"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 9
+    },
+    {
+      "idCompany": 5,
+      "idClient": null,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "17:48",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Bodegas y mudanzas Santana",
+        "logo": "https://www.santanamudanzasybodegas.com/wp-content/uploads/2021/07/SANTANA-BODEGAS-Y-MUDANZAS-MUDANZAS-EN-CALI-MUDANZAS-NACIONALES-01.jpg"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 10
+    },
+    {
+      "idCompany": 4,
+      "idClient": {
+        "userId": "1"
+      },
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "17:54",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Mudate facil",
+        "logo": "https://www.zarla.com/images/zarla-mdate-fcil-1x1-2400x2400-20220329-q9j6rjmbw347xwbwmy3g.png?crop=1:1,smart&width=250&dpr=2"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 11
+    },
+    {
+      "idCompany": 6,
+      "idClient": {
+        "userId": "1"
+      },
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "17:55",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Practi Mudanza",
+        "logo": "https://practimudanza.com/wp-content/uploads/2020/11/LOGO-RECTANGULAR-PRACTIMUDANZA-RGB-LOGO-MUDANZAS-MUDANZAS-EN-CALI-EMPRESAS-DE-MUDANZAS-EN-CALI-01.png"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 12
+    },
+    {
+      "idCompany": 2,
+      "idClient": {
+        "userId": "1"
+      },
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "17:56",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Romabe transporte",
+        "logo": "https://transporteromabe.com/wp-content/uploads/2021/07/Mudanzas-de-Arequipa-a-Lima-2.jpg"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 13
+    },
+    {
+      "idCompany": 4,
+      "idClient": 1,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "18:7",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Mudate facil",
+        "logo": "https://www.zarla.com/images/zarla-mdate-fcil-1x1-2400x2400-20220329-q9j6rjmbw347xwbwmy3g.png?crop=1:1,smart&width=250&dpr=2"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 14
+    },
+    {
+      "idCompany": 4,
+      "idClient": 1,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "18:9",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Mudate facil",
+        "logo": "https://www.zarla.com/images/zarla-mdate-fcil-1x1-2400x2400-20220329-q9j6rjmbw347xwbwmy3g.png?crop=1:1,smart&width=250&dpr=2"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 15
+    },
+    {
+      "idCompany": 1,
+      "idClient": 1,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "18:11",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Transporte y mudanzas Rapi2",
+        "logo": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logotipo-transporte-y-mudanzas-design-template-8ee4abec6c3d27c285e676c71f18c550_screen.jpg?ts=1626998647"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 16
+    },
+    {
+      "idCompany": 5,
+      "idClient": 1,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "18:12",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Bodegas y mudanzas Santana",
+        "logo": "https://www.santanamudanzasybodegas.com/wp-content/uploads/2021/07/SANTANA-BODEGAS-Y-MUDANZAS-MUDANZAS-EN-CALI-MUDANZAS-NACIONALES-01.jpg"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 17
+    },
+    {
+      "idCompany": 8,
+      "idClient": 1,
+      "bookingDate": "2023-9-30",
+      "pickupAddress": "Locación actual",
+      "destinationAddress": "Por Definir",
+      "movingDate": "2023-9-30",
+      "movingTime": "18:13",
+      "status": "En curso",
+      "hiredCompany": {
+        "name": "Mudanzas Plata",
+        "logo": "https://mudanzasplata.com/wp-content/uploads/2021/07/cropped-logo-mudannzas-plata-transparente.png"
+      },
+      "payment": {
+        "totalAmount": 0,
+        "paymentMethod": "Por definir"
+      },
+      "chat": {},
+      "id": 18
+    }
+  ],
+  "clients": [
+    {
+      "name": "eric",
+      "apellidoMaterno": "rios",
+      "apellidoPaterno": "cuevas",
+      "celular": "912345678",
+      "direccion": "monterrico",
+      "email": "e@gmail.com",
+      "password": "123456",
+      "userType": "client",
+      "id": 1
+    },
+    {
+      "name": "andrea",
+      "apellidoMaterno": "rosales",
+      "apellidoPaterno": "ohiggins",
+      "celular": "911222333",
+      "direccion": "lince",
+      "email": "a@gmail.com",
+      "password": "0123456",
+      "userType": "client",
+      "id": 2
+    }
+  ],
+  "reviews": [
+    {
+      "rating": 5,
+      "comment": "¡Una experiencia excepcional! Entrega puntual y atención al cliente sobresaliente.",
+      "companyId": 2,
+      "id": 3
+    },
+    {
+      "rating": 3,
+      "comment": "El servicio cumplió con lo esperado, sin destacar positiva ni negativamente.",
+      "companyId": 3,
+      "id": 3
+    },
+    {
+      "rating": 5,
+      "comment": "Muy satisfecho con el servicio, superó mis expectativas.",
+      "companyId": 7,
+      "id": 4
+    },
+    {
+      "rating": 4,
+      "comment": "Buen servicio",
+      "companyId": 8,
+      "id": 5
+    },
+    {
+      "rating": 3,
+      "comment": "El servicio fue promedio, nada espectacular pero tampoco terrible.",
+      "companyId": 7,
+      "id": 6
+    },
+    {
+      "rating": 4,
+      "comment": "Buen servicio en general, pero hubo un pequeño retraso en la entrega.",
+      "companyId": 6,
+      "id": 7
+    }
+  ],
+  "subscriptions": [
+    {
+      "firma": "m84pWq",
+      "idCompany": 1,
+      "subscriptionDate": "2023-10-25T21:39:09.364Z",
+      "subscriptionType": "6 month plan",
+      "payment": {
+        "paymentMethod": "1234253576585352"
+      },
+      "hiredCompany": {
+        "name": "Transporte y mudanzas Rapi2",
+        "logo": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logotipo-transporte-y-mudanzas-design-template-8ee4abec6c3d27c285e676c71f18c550_screen.jpg?ts=1626998647"
+      },
+      "id": 1
+    },
+    {
+      "firma": "nPCqDy",
+      "idCompany": 7,
+      "subscriptionDate": "2023-10-25T21:56:58.044Z",
+      "subscriptionType": "12 month plan",
+      "payment": {
+        "paymentMethod": "7365463847592716"
+      },
+      "hiredCompany": {
+        "name": "Mudanzas Jurado",
+        "logo": "https://www.mudanzasjurado.com/uploads/UFOLSqyA/353x0_387x0/logo.jpg"
+      },
+      "id": 2
+    },
+    {
+      "firma": "QWIIzr",
+      "idCompany": 1,
+      "subscriptionDate": "2023-11-03T19:50:44.350Z",
+      "subscriptionType": "6 month plan",
+      "payment": {
+        "paymentMethod": "1234345645673456"
+      },
+      "hiredCompany": {
+        "name": "Transporte y mudanzas Rapi2",
+        "logo": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logotipo-transporte-y-mudanzas-design-template-8ee4abec6c3d27c285e676c71f18c550_screen.jpg?ts=1626998647"
+      },
+      "id": 3
+    }
+  ]
+}
