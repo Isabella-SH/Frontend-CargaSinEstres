@@ -1,0 +1,109 @@
+<div class="min-h-screen">
+    <div class="flex flex-col py-10 justify-center mx-auto container max-w-screen-xl">
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Comprar membresía
+        </h1>
+
+        <div class="my-12 bg-[#232323] rounded-3xl">
+            <div class="p-6 md:px-20">
+                <div class="flex">
+                    <div class="md:w-1/2 my-3 flex flex-col justify-center md:items-start">
+                        <h1 class="text-3xl font-semibold text-amber-400 text-center md:text-left">Carga Sin Estrés
+                            Premium</h1>
+                        <p class="py-4 mb-4 text-white">
+                            Consigue Carga Sin Estrés Premium para obtener acceso a una serie de beneficios exclusivos,
+                            diseñados para que tu negocio tenga mayor visibilidad y prioridad de asignación.
+                        </p>
+                    </div>
+
+                    <div class="md:w-1/2 hidden md:block">
+                        <img src="assets/public-images/truck.svg" alt="truck" class="object-center mx-auto" width="300"
+                             height="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Beneficios
+        </h1>
+
+        <div class="lg:grid lg:grid-cols-3 gap-3 space-y-8 lg:space-y-0 my-12">
+            <div class="beneficio flex flex-col mx-auto max-w-lg text-center rounded-3xl border p-14 bg-white">
+                <img src="assets/public-images/truck.svg" alt="queue" class="object-center mx-auto" width="200"
+                     height="200">
+                <h3 class="font-semibold my-3">Empresa destacada</h3>
+                <p class="text-gray-500">
+                    Tu empresa será recomendada con mayor frecuencia a los clientes.
+                </p>
+            </div>
+
+            <div class="beneficio flex flex-col mx-auto max-w-lg text-center rounded-3xl border p-14 bg-white">
+                <img src="assets/public-images/truck.svg" alt="queue" class="object-center mx-auto" width="200"
+                     height="200">
+                <h3 class="font-semibold my-3">Mayor visibilidad</h3>
+                <p class="text-gray-500">
+                    Destaca tu empresa con un fondo dorado.
+                </p>
+            </div>
+
+            <div class="beneficio flex flex-col mx-auto max-w-lg text-center rounded-3xl border p-14 bg-white">
+                <img src="assets/public-images/truck.svg" alt="queue" class="object-center mx-auto" width="200"
+                     height="200">
+                <h3 class="font-semibold my-3">Prioridad de asignación</h3>
+                <p class="text-gray-500">
+                    Obtén prioridad en la asignación de solicitudes de “Carga rápida”.
+                </p>
+            </div>
+        </div>
+
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Elige el plan que más te convenga
+        </h1>
+
+
+
+        <div class="lg:grid lg:grid-cols-3 gap-3 space-y-8 lg:space-y-0 my-12">
+            <div class="plan flex flex-col mx-auto max-w-lg text-center rounded-3xl border p-14 bg-white cursor-pointer" (click)="IrAFormulario()">
+                <h3 class="font-semibold mb-3">Plan trimestral</h3>
+                <img src="assets/public-images/truck.svg" alt="truck" class="object-center mx-auto" width="200"
+                     height="200">
+                <div class="flex justify-center items-baseline mt-8 mb-4">
+                    <span class="mr-2 text-5xl font-regular">S/35</span>
+                    <span class="text-gray-400">total</span>
+                </div>
+
+                <button class="text-black bg-amber-500 hover:bg-amber-300 font-medium rounded py-2.5 text-center px-4">
+                    Comenzar
+                </button>
+            </div>
+
+            <div class="plan flex flex-col mx-auto max-w-lg text-center rounded-3xl border bg-[#232323] p-14 text-amber-400 cursor-pointer" (click)="IrAFormulario()">
+                <h3 class="font-semibold mb-3">Plan semestral</h3>
+                <img src="assets/public-images/truck.svg" alt="truck" class="object-center mx-auto" width="200"
+                     height="200">
+                <div class="flex justify-center items-baseline mt-8 mb-4">
+                    <span class="mr-2 text-5xl font-regular">S/95</span>
+                    <span class="text-amber-200">total</span>
+                </div>
+
+                <button class="text-black bg-amber-500 hover:bg-amber-300 font-medium rounded py-2.5 text-center px-4">
+                    Comenzar
+                </button>
+            </div>
+
+            <div class="plan flex flex-col mx-auto max-w-lg text-center rounded-3xl border p-14 bg-white cursor-pointer" (click)="IrAFormulario()">
+                <h3 class="font-semibold mb-3">Plan anual</h3>
+                <img src="assets/public-images/truck.svg" alt="truck" class="object-center mx-auto" width="200"
+                     height="200">
+                <div class="flex justify-center items-baseline mt-8 mb-4">
+                    <span class="mr-2 text-5xl font-regular">S/365</span>
+                    <span class="text-gray-400">total</span>
+                </div>
+
+                <button class="text-black bg-amber-500 hover:bg-amber-300 font-medium rounded py-2.5 text-center px-4">
+                    Comenzar
+                </button>
+            </div>
+        </div>
+    </div>

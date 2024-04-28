@@ -1,0 +1,61 @@
+<br><br><br>
+
+<h1>FORMULARIO MEMBRESÍA</h1>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" >
+    <img class="logo-img" src="/assets/public-images/Cargalogo.png" alt="logo Carga sin estres">
+
+    <br>
+
+    <mat-form-field class="form-group" appearance="fill">
+      <mat-label>Selecciona el plan de membresía</mat-label>
+      <mat-select [(ngModel)]="selectedPlan" name="selectedPlan">
+        <mat-option *ngFor="let plan of planOptions" [value]="plan">
+          {{ plan.months }} meses - ${{ plan.price }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="form-group" appearance="fill" id="cardNumber">
+      <mat-label>Numero de Tarjeta</mat-label>
+      <input matInput name="cardNumber" required [(ngModel)]="cardNumber">
+    </mat-form-field>
+
+  
+    <label for="CVV">Ingrese el CVV de la tarjeta</label>
+    <mat-form-field class="form-group" appearance="fill" id="CVV">
+      <mat-label>CVV</mat-label>
+      <input matInput name="CVV" required>
+    </mat-form-field>
+  
+    <label for="fechaVencimiento">Ingrese la fecha de vencimiento de la tarjeta</label>
+    <mat-form-field class="form-group" appearance="fill" id="fechaVencimiento">
+      <mat-label>Fecha de vencimiento de la tarjeta</mat-label>
+      <input matInput name="fechaVencimiento" required>
+    </mat-form-field>
+    
+    <button mat-button class="btn" [disabled]="!botonDesactivado" type = "submit">Continuar</button>
+  </form>
+</div>
+
+<div class="confirmation-card" *ngIf="confirmacionVisible">
+  <mat-card>
+    <mat-card-content>
+      <h2>Boleta de Confirmación</h2>
+      <p><strong>Vigencia de Suscripción:</strong> {{ newMembership.endDate }}</p>
+      <p><strong>Numero de tarjeta de pago:</strong> {{ cardNumber }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button class="btn" (click)="firmar()">Firmar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="confirm-message">
+    <p>Confirmado </p>
+    <p>Firma autentificadora: {{ firma }}</p>
+  </div>
+  <button mat-button class="btn" (click)="descargarBoleta()">Descargar Boleta</button>
+</div>
+<br><br><br>

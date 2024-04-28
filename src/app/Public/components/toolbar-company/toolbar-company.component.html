@@ -1,0 +1,45 @@
+<nav class="navbar flex flex-wrap items-center justify-between align-items-center py-2 px-4">
+  <div class="container mx-auto py-2 px-4 xl:px-0 flex flex-wrap items-center justify-between text-amber-300">
+    <div class="w-full relative flex justify-between xl:w-auto md:px-0 xl:static xl:block xl:justify-start items-center">
+      <a class="font-semibold flex whitespace-nowrap items-center" routerLink="/landing-page">
+        <img src="assets/public-images/Cargalogo.png" aria-label="Main page button" alt="Carga logo button" class="img-logo"/>
+        <p class="hidden md:block">Carga Sin Estrés</p>
+      </a>
+
+      <button class="xl:hidden text-xl" (click)="toggleMenu()" aria-label="Open/Close toolbar menu">
+        <i class="{{ showMenu ? 'fa fa-close' : 'fa fa-bars'}}"></i>
+      </button>
+    </div>
+
+    <div class="xl:flex xl:flex-grow items-center align-middle dropdown {{ showMenu ? 'open' : '' }}">
+      <ul class="flex flex-col xl:flex-row list-none xl:ml-auto gap-y-3 xl:gap-y-0 gap-x-4 xl:gap-x-16">
+        <li>
+          <a class="cursor-pointer" (click)="pageActiveReservations()">
+            <h2 class="hover:text-white">Solicitudes</h2>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer" (click)="pageReservationHistory()">
+            <h2 class="hover:text-white">Historial</h2>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer" (click)="pageSettings()">
+            <h2 class="hover:text-white">Editar Perfil</h2>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer" (click)="pageMembership()">
+            <h2 class="hover:text-white">Comprar membresía</h2>
+          </a>
+        </li>
+        <li>
+          <a class="cursor-pointer" (click)="pageLanding()">
+            <h2 class="hover:text-white">Cerrar sesión</h2>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

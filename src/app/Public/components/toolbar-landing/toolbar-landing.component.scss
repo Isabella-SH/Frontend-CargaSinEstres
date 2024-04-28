@@ -1,0 +1,36 @@
+.img-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+button {
+    outline: none;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #232323;
+    backdrop-filter: blur(8px);
+    z-index: 100;
+}
+
+.dropdown.open {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    text-align: end;
+    max-height: 500px;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .dropdown:not(.open) {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0;
+        transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    }
+}

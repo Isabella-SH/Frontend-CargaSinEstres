@@ -1,0 +1,160 @@
+/* Estilos para la sección de presentación */
+#presentation {
+  padding: 100px 0;
+  background-image: url('/assets/public-images/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+
+.presentation-box {
+background-color: rgba(255, 149, 0, 0.7);
+padding: 20px;
+border-radius: 10px;
+margin-right: 30px;
+}
+
+.presentation-box h1 {
+color: #fff;
+}
+
+.presentation-box h2 {
+color: #141313;
+}
+
+/* Estilos para la sección de servicios */
+.services {
+  padding: 100px 0;
+  background-color: #1f1e1e;
+}
+
+.services h2 {
+  color: #ffffff;
+}
+
+.service-box {
+  background-color: #ff8800;
+  border: 1px solid #ff8800;
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 30px;
+  color: #000000;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
+
+.service-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.service-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Estilos para la sección "Sobre Nosotros" */
+.about-us {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.about-us h2 {
+  color: #333;
+}
+
+.about-us-logo {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.about-us-description {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  color: #333;
+}
+
+/* Estilos para la sección "Planes para Empresa" */
+.plans {
+  padding: 100px 0;
+  background-color: #1f1e1e;
+}
+
+.plans h2 {
+  color: #ffffff;
+}
+
+.plans h1 {
+  color: #ffffff;
+}
+
+.plan-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.plan-box:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para la sección de "Testimonios" */
+.testimonials {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.testimonials h2 {
+  color: #333;
+}
+
+.testimonial-box {
+  background-color: #3e3e3e;
+  border: 1px solid #000000c5;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de scroll */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  background-color: #ff8800;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 40%;
+  cursor: pointer;
+  z-index: 999;
+}

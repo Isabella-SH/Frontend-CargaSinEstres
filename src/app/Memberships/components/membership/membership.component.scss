@@ -1,0 +1,7 @@
+.plan {
+  transition: transform 0.3s ease-in-out;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
