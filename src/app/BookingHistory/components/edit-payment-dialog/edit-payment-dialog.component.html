@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Edit Price</h2>
+<form #editPriceForm="ngForm" (ngSubmit)="submit()">
+    <mat-dialog-content>
+        <mat-form-field>
+            <mat-label for="price">Price</mat-label>
+            <input matInput id="price" type="number" name="price" [(ngModel)]="payment" required>
+        </mat-form-field>
+
+        <div class="flex justify-between mb-4">
+            <mat-form-field class="w-1/2" color="accent">
+                <mat-label for="startDate">Fecha</mat-label>
+                <input matInput id="startDate" name="startDate" [matDatepicker]="picker" [(ngModel)]="startDate" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="w-1/2" color="accent">
+                <mat-label for="startTime">Hora</mat-label>
+                <input matInput id="startTime" name="startTime" type="time" [(ngModel)]="startTime" required>
+            </mat-form-field>
+        </div>
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="cancel()" class="text-black hover:bg-rose-400 font-medium rounded py-2.5 text-center" style="background-color: #F36F56;">Cancel</button>
+        <button mat-button [disabled]="payment === 0 || editPriceForm.invalid" type="submit" class="save-button text-black font-medium rounded py-2.5 text-center">Save</button>
+    </mat-dialog-actions>
+</form>

@@ -1,0 +1,98 @@
+<app-toolbar-landing></app-toolbar-landing>
+<div class="h-full">
+    <div class="flex flex-wrap items-center justify-center">
+        <div class="w-full">
+            <div class="block bg-white">
+                <div class="g-0 lg:flex lg:flex-wrap">
+                    <div class="px-4 md:px-0 py-10 lg:w-8/12">
+                        <div class="flex flex-col text-center justify-center mt-5 mx-auto">
+                            <h1 class="text-black text-4xl font-bold mb-4">{{ 'customerForm.title' | translate }}</h1>
+                            <div class="flex justify-center items-center mb-7">
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                                <p class="mx-4">{{ 'customerForm.signUp' | translate }}</p>
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                            </div>
+
+                            <div class="max-w-2/3">
+                                <form id="myForm" action="" method="post" [formGroup]="clientRegistrationForm"
+                                      (submit)="onSubmit()">
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.name' | translate }}</mat-label>
+                                            <input matInput type="text" id="firstName" formControlName="firstName" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.lastName' | translate }}</mat-label>
+                                            <input matInput type="text" id="lastName"
+                                                   formControlName="lastName" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="w-1/2" color="accent">
+                                            <mat-label for="startDate">{{ 'customerForm.birthDate' | translate }}</mat-label>
+                                            <input matInput id="dateOfBirth" name="dateOfBirth"  formControlName="dateOfBirth" [matDatepicker]="picker" required>
+                                            <mat-hint>MM/DD/YYYY</mat-hint>
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.phone' | translate }}</mat-label>
+                                            <input matInput type="text" id="phoneNumber" formControlName="phoneNumber" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.email' | translate }}</mat-label>
+                                            <input matInput type="email" id="email" formControlName="email" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.password' | translate }}</mat-label>
+                                            <input matInput type="password" id="password" formControlName="password"
+                                                   required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'customerForm.confirmPassword' | translate }}</mat-label>
+                                            <input matInput type="password" id="confirmarpassword"
+                                                   formControlName="confirmarpassword" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <button class="hover:text-white border border-amber-400 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded mb-5 px-14 lg:px-32 py-2.5 text-center">
+                                        {{ 'customerForm.createAccount' | translate }}
+                                    </button>
+
+                                    <div class="mb-3">
+                                        <a routerLink='/login'>{{ 'customerForm.alreadyHaveAccount' | translate }} <span
+                                                class="text-amber-500">{{ 'customerForm.signIn' | translate }}</span></a>
+                                    </div>
+
+                                    <div id="errorMessages" class="text-red-600 text-sm" [innerHTML]="errorMessage">
+                                        <p>{{errorMessage}} </p>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center lg:w-4/12"
+                         style="background: linear-gradient(to right, #ff930f, #fff95b)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

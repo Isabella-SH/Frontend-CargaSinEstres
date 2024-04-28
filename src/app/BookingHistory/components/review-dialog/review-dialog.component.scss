@@ -1,0 +1,123 @@
+/* Botón de cerrar el dialog */
+.btn-close {
+    float: right;
+    margin: 5px;
+}
+
+.btn-close:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Contenedor del dialog */
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+/* Input textarea */
+.textarea-message {
+    width: 100%;
+    min-height: 100px;
+    resize:vertical;
+    font-size: medium;
+}
+
+/* Botón de enviar mensaje */
+.btn-send-review {
+    display: flex;
+    align-items: center;
+    background-color: #FDAE39;
+}
+
+mat-card {
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    color: black;
+    border: none; /* Quita el borde del mat-card */
+    box-shadow: none !important; /* Quita la sombra */
+}
+
+mat-card-content {
+    color: black; /* Cambia el color de la letra a negro */
+    margin-top: -14px; 
+    margin-bottom: -14px;
+    margin-left: -5px;
+}
+
+.nameCompany{
+  color: #FDAE39;
+  font-size: 30px;
+  text-align: center;
+}
+
+img{
+    margin: 0 auto; 
+    display: block; 
+}
+
+.textarea-message, #rating {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FDAE39;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #333;
+    transition: border-color 0.3s, background-color 0.3s;
+  
+    &:hover {
+      border-color: #ffa703;
+      background-color: #f1f1f1;
+    }
+  
+    &:focus {
+      border-color: #ffa703;
+      background-color: #f1f1f1;
+      outline: none;
+    }
+  
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+
+  #form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }

@@ -1,0 +1,64 @@
+<div class="min-h-screen">
+    <!-- Active reservation display for customers -->
+    <div *ngIf="userType === 'client'" class="flex flex-col py-10 justify-center mx-auto container max-w-screen-xl">
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Mis reservas
+        </h1>
+
+        <div class="my-12 md:mx-24">
+            <div *ngIf="pendingReservations.length > 0 || newReservations.length > 0; else noPendingReservations">
+                <div *ngFor="let reservation of newReservations">
+                    <app-reservation-item [reservation]="reservation" [userType]="userType" (reservationUpdated)="updateReservations()"></app-reservation-item>
+                </div>
+
+                <div *ngFor="let reservation of pendingReservations">
+                    <app-reservation-item [reservation]="reservation" [userType]="userType"></app-reservation-item>
+                </div>
+            </div>
+            <ng-template #noPendingReservations>
+                <p class="text-center text-gray-500">No se encontraron servicios reservados</p>
+            </ng-template>
+        </div>
+    </div>
+
+    <!-- Active reservation display for companies -->
+    <div *ngIf="userType === 'company'" class="flex flex-col py-10 justify-center mx-auto container max-w-screen-xl">
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Nuevas solicitudes
+        </h1>
+
+        <div class="my-12 md:mx-24">
+            <div *ngIf="newReservations.length > 0; else noNewReservations">
+                <div *ngFor="let reservation of newReservations">
+                    <app-reservation-item [reservation]="reservation" [userType]="userType" (reservationUpdated)="updateReservations()"></app-reservation-item>
+                </div>
+            </div>
+            <ng-template #noNewReservations>
+                <p class="text-center text-gray-500">No se encontraron nuevas solicitudes</p>
+            </ng-template>
+        </div>
+
+        <h1 class="text-center text-black text-4xl font-bold mt-3 mb-4">
+            Servicios por realizar
+        </h1>
+
+        <div class="my-12 md:mx-24">
+            <div class="flex justify-center">
+                <!-- Filter results -->
+                <mat-form-field class="w-full md:w-1/2" color="accent">
+                    <mat-label for="companyName">Buscar...</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" id="companyName">
+                </mat-form-field>
+            </div>
+
+            <div *ngIf="pendingReservations.length > 0; else noPendingReservations">
+                <div *ngFor="let reservation of pendingReservations">
+                    <app-reservation-item [reservation]="reservation" [userType]="userType"></app-reservation-item>
+                </div>
+            </div>
+            <ng-template #noPendingReservations>
+                <p class="text-center text-gray-500">No se encontraron solicitudes pendientes</p>
+            </ng-template>
+        </div>
+    </div>
+</div>

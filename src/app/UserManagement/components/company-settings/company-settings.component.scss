@@ -1,0 +1,43 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    border: 2px solid #DBDBDB;
+    border-radius: 5px;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item {
+    margin-bottom: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: #FFCA28;
+}
+
+.checkbox-container:hover .checkmark {
+    background-color: #ccc;
+}

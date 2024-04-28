@@ -1,0 +1,50 @@
+<p><button mat-icon-button mat-dialog-close class="btn-close">
+    <mat-icon>close</mat-icon>
+</button></p>
+<p>
+    <mat-dialog-content>
+        <header style="display: flex ;">
+            <mat-icon> rate_review </mat-icon>&nbsp;&nbsp;
+            <h1>Reseña</h1>
+            
+        </header>
+
+        <mat-card>
+            <mat-card-content>
+                <h2 class="nameCompany">{{nameCompany}}</h2>
+                <br>
+                <img src="{{logoCompany}}" alt="company logo" width="100" height="100"> 
+
+                <form id="reviewForm" [formGroup]="reviewForm" (submit)="sendReview()">
+                    <div class="dialog-content">
+                      <div>
+                        <div class="clasificacion">
+                            <input type="radio" id="radio5" [value]="5" formControlName="rating">
+                            <label for="radio5">★</label>
+                            <input type="radio" id="radio4" [value]="4" formControlName="rating">
+                            <label for="radio4">★</label>
+                            <input type="radio" id="radio3" [value]="3" formControlName="rating">
+                            <label for="radio3">★</label>
+                            <input type="radio" id="radio2" [value]="2" formControlName="rating">
+                            <label for="radio2">★</label>
+                            <input type="radio" id="radio1" [value]="1" formControlName="rating">
+                            <label for="radio1">★</label>
+                        </div>
+
+                        
+                        <input class="textarea-message" type="text" placeholder="Escriba aquí su reseña..." formControlName="comment" id="comment" required>
+                  
+                      </div>&nbsp;&nbsp;
+                      
+                      <div>
+                        <button mat-raised-button class="btn-send-review" type="submit">Enviar mensaje</button>
+                    </div>
+                    </div>
+                  </form>
+                  
+
+            </mat-card-content>
+        </mat-card>
+        
+    </mat-dialog-content>
+</p>

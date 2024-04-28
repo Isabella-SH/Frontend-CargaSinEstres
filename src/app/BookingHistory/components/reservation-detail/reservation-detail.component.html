@@ -1,0 +1,46 @@
+<div class="mb-6">
+    <hr class="mb-4 border-t-2 border-gray-300">
+
+    <p class="font-bold mb-4">Detalles de la reserva</p>
+
+    <div class="flex justify-between mb-2">
+        <p class="text-gray-500">Servicios solicitados</p>
+        <p>{{ reservation.services }}</p>
+    </div>
+
+    <!-- Customer and company names -->
+    <div *ngIf="this.userType === 'company'" class="flex justify-between mb-2">
+        <p class="text-gray-500">Nombre del cliente</p>
+        <p>{{ reservation.customer?.firstName }} {{ reservation.customer?.lastName }} </p>
+    </div>
+    <div *ngIf="this.userType === 'client'" class="flex justify-between mb-2">
+        <p class="text-gray-500">Nombre de la empresa</p>
+        <p>{{ reservation.companyName }} </p>
+    </div>
+
+    <div *ngIf="reservation.status != 'solicited'" class="flex justify-between mb-2">
+        <p class="text-gray-500">Costo del servicio</p>
+        <p>S/. {{ reservation.price }}
+            <a class="cursor-pointer">
+                <i *ngIf="reservation.status === 'scheduled' && this.userType === 'company'" (click)="openEditPaymentDialog()" class="ml-2 fa fa-pen"></i>
+            </a>
+        </p>
+    </div>
+
+    <div class="flex justify-between mb-2">
+        <p class="text-gray-500">Estado del servicio</p>
+        <p> 
+            {{ 
+                reservation.status === 'solicited' ? 'Iniciar Proceso' :
+                reservation.status === 'to be scheduled' ? 'Por programar' :
+                reservation.status === 'scheduled' ? 'Programado' :
+                reservation.status === 're-scheduled' ? 'Reprogramado' :
+                reservation.status === 'cancelled' ? 'Cancelada' :
+                reservation.status === 'in progress' ? 'En progreso' :
+                reservation.status // Valor predeterminado
+            }}
+        </p>
+    </div>
+
+    <hr class="mt-4 border-t-2 border-gray-300">
+</div>

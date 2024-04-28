@@ -1,0 +1,161 @@
+<div class="mb-8 bg-white rounded-3xl drop-shadow-md">
+    <div class="p-8 md:px-20 md:py-12">
+        <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-500">{{ (reservation.status === 'finalized' || reservation.status === 'cancelled') ?
+                'Fecha de inicio del servicio' : 'Fecha para realizar el servicio' }}</p>
+            <div class="text-right flex">
+                <p class="text-right">{{ reservation.startDate | date:'EEEE dd/MM/yyyy' }}</p>
+                <p class="text-right"> ・ {{ reservation.startTime }} hs</p>
+            </div>
+        </div>
+        <div *ngIf="reservation.status === 'finalized' || reservation.status === 'cancelled'" class="flex items-center justify-between mb-4">
+            <p class="text-gray-500"> {{ (reservation.status === 'finalized') ?
+                'Fecha de finalización del servicio' : 'Fecha de cancelación del servicio' }} </p>
+            <div class="text-right flex">
+                <p class="text-right">{{ reservation.endDate | date:'EEEE dd/MM/yyyy' }}</p>
+                <p class="text-right"> ・ {{ reservation.endTime }} hs</p>
+            </div>
+        </div>
+
+        <div class="flex mb-6">
+            <img src="assets/public-images/origin-destination.svg" alt="origin-destination" class="h-40 mr-3">
+            <div>
+                <div class="mt-[2px]">
+                    <p class="bg-gradient-to-b from-[#8856F3] to-[#44B0FF] inline-block text-transparent bg-clip-text font-bold">
+                        Origen
+                    </p>
+                    <p>{{reservation.originAddress}}</p>
+                </div>
+                <div class="mt-[62px]">
+                    <p class="bg-gradient-to-b from-[#F36F56] to-[#FFC444] inline-block text-transparent bg-clip-text font-bold">
+                        Destino
+                    </p>
+                    <p>{{ reservation.destinationAddress }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- View details, accept and cancel buttons for companies -->
+        <div *ngIf="this.userType === 'company' && reservation.status === 'solicited'">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+                <div class="mt-6 flex justify-end" style="padding: 5px;">
+                        <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer text-[#44B0FF]"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                        <a class="mr-6 cursor-pointer" (click)="openEditPaymentDialog()"  >
+                            <i class="fa-regular fa-edit mr-2" (click)="openEditPaymentDialog()" ></i>Editar detalles de reserva  <!-- Editar el precio y detalles (fecha y hora) de la reserva -->
+                        </a>
+                </div>
+            </div>
+
+            <div class="flex justify-between">
+                <button [disabled]="reservation.price === 0" (click)="setReservationStatus(reservation, 'to be scheduled')"
+                        class="btn-aceptar text-black font-medium rounded py-2.5 text-center md:w-1/3 px-4" style="margin: 5px;">
+                    Aceptar
+                </button>
+                
+                <button (click)="setReservationStatus(reservation, 'cancelled'); setReservationEndDateTime(reservation)"
+                        class="text-black bg-[#F36F56] hover:bg-rose-400 font-medium rounded py-2.5 text-center md:w-1/3 px-4" style="margin: 5px;">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+        <!-- View details, accept and cancel buttons for customers -->
+        <div *ngIf="this.userType === 'client' && reservation.status === 'solicited'">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType" *ngIf="showDetails"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+                <div class="mt-6 flex justify-end">
+                    <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                    <a (click)="setReservationStatus(reservation, 'cancelled'); setReservationEndDateTime(reservation)"
+                       class="mr-6 cursor-pointer text-[#F36F56]">Cancelar servicio</a>
+                    <a (click)="toggleDetails()"
+                       class="cursor-pointer">{{ showDetails ? 'Ocultar detalles' : 'Ver detalles' }}</a>
+                       
+                </div>
+            </div>
+        </div>
+
+        <!-- View of 'to be sheduled' reservations for clients -->
+        <div *ngIf="(reservation.status === 'to be scheduled' || reservation.status==='re-scheduled') && this.userType === 'client'">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType" *ngIf="showDetails"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+                <div class="mt-6 flex justify-end" style="padding: 5px;">
+                        <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                        <a (click)="toggleDetails()"
+                        class="cursor-pointer">{{ showDetails ? 'Ocultar detalles' : 'Ver detalles' }}</a>
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <button (click)="setReservationStatus(reservation, 'scheduled')"
+                class="text-black bg-amber-500 hover:bg-amber-300 font-medium rounded py-2.5 text-center md:w-1/3 px-4" (click)="setReservationStatus(reservation, 'scheduled')">
+                    Aceptar cambios
+                </button>
+                <button (click)="setReservationStatus(reservation, 'cancelled'); setReservationEndDateTime(reservation)"
+                class="text-black bg-[#F36F56] hover:bg-rose-400 font-medium rounded py-2.5 text-center md:w-1/3 px-4 " style="margin-left: 33%;">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+        <!-- View of 'to be sheduled' reservations for companies -->
+        <div *ngIf="(reservation.status === 'to be scheduled' || reservation.status==='re-scheduled') && this.userType === 'company' ">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType"></app-reservation-detail>
+            <div class="flex justify-between">
+                <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+
+                <button (click)="setReservationStatus(reservation, 'cancelled'); setReservationEndDateTime(reservation)"
+                        class="text-black bg-[#F36F56] hover:bg-rose-400 font-medium rounded py-2.5 text-center md:w-1/3 px-4">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+        <!-- View details, cancel service and open chat buttons for every user -->
+        <div *ngIf="reservation.status === 'scheduled'" class="flex flex-col">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType" *ngIf="showDetails"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+
+                <div class="mt-6 flex justify-end">
+                    <a *ngIf="this.userType === 'company'" class="mr-6 cursor-pointer text-[#FFC431]" (click)="openEditPaymentDialog()" >Reprogramar</a>
+                    <ng-container>
+                        <a (click)="setReservationStatus(reservation, 'cancelled'); setReservationEndDateTime(reservation)" class="mr-6 cursor-pointer text-[#F36F56]">Cancelar servicio</a>
+                    </ng-container>
+
+                    <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                    <a (click)="toggleDetails()" class="cursor-pointer">{{ showDetails ? 'Ocultar detalles' : 'Ver detalles' }}</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- View details, cancel service and open chat buttons for every user -->
+        <div *ngIf="reservation.status==='in progress'" class="flex flex-col">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType" *ngIf="showDetails"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+
+                <div class="mt-6 flex justify-end">
+                    <ng-container>
+                        <a (click)="setReservationStatus(reservation, 'finalized'); setReservationEndDateTime(reservation)" class="mr-6 cursor-pointer text-[#4CAF50]">Finalizar servicio</a>
+                    </ng-container>
+
+                    <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                    <a (click)="toggleDetails()" class="cursor-pointer">{{ showDetails ? 'Ocultar detalles' : 'Ver detalles' }}</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- View details and open chat buttons for every user -->
+        <div *ngIf="reservation.status ==='finalized' || reservation.status === 'cancelled'" class="flex flex-col">
+            <app-reservation-detail [reservation]="reservation" [userType]="this.userType" *ngIf="showDetails"></app-reservation-detail>
+            <div class="flex flex-col justify-center items-end">
+                <div class="mt-6 flex justify-end">
+                    <a (click)="openChatDialog(reservation)" class="mr-6 cursor-pointer"><i
+                            class="fa-regular fa-message mr-2"></i> Abrir chat</a>
+                    <a (click)="toggleDetails()"
+                       class="cursor-pointer">{{ showDetails ? 'Ocultar detalles' : 'Ver detalles' }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<app-toolbar-landing></app-toolbar-landing>
+
+<div class="h-full">
+    <div class="flex flex-wrap items-center justify-center">
+        <div class="w-full">
+            <div class="block bg-white">
+                <div class="min-h-screen g-0 lg:flex lg:flex-wrap">
+                    <div class="px-4 md:px-0 py-10 lg:w-8/12">
+                        <div class="flex flex-col text-center justify-center mt-5 mx-auto">
+                            <h1 class="text-black text-4xl font-bold mb-4">{{ 'signUp.title' | translate }}</h1>
+                            <div class="flex justify-center items-center mb-7">
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                                <p class="mx-4">{{ 'signUp.signUp' | translate }}</p>
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                            </div>
+
+                            <div class="max-w-2/3">
+                                <p class="mb-3">{{ 'signUp.accountType' | translate }}</p>
+
+                                <div class="mb-3">
+                                    <div class="flex flex-wrap items-center justify-center">
+                                        <div class="w-64 h-48 rounded-lg mb-5 mx-3"
+                                             *ngFor="let account of account_types; index as i">
+                                            <div class="cont-checkbox transition-all duration-150 ease-in-out">
+                                                <input type="radio" name="myRadio" [id]="'myRadio-' + i"
+                                                       (change)="onAccountSelected(account)" class="hidden"/>
+                                                <label [for]="'myRadio-' + i"
+                                                       class="cursor-pointer rounded-lg overflow-hidden opacity-60">
+                                                    <img [src]="account.img" class="w-full object-cover grayscale">
+                                                </label>
+                                            </div>
+                                            <div class="text-sm capitalize">{{ 'signUp.' + account.name.toLowerCase() | translate }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="hover:text-white border border-amber-400 hover:bg-amber-500 focus:ring-4
+                                 focus:outline-none focus:ring-amber-300 font-medium rounded mb-5 px-14 lg:px-32 py-2.5
+                                  text-center" (click)="navigateToAccountForm()"
+                                >
+                                    <span class="flex justify-center">
+                                        {{ 'signUp.continueAs' | translate }}{{ selectedAccount ? ' ' + selectedAccount.name : '...'}}
+                                    </span>
+                                </button>
+
+                                <div class="mb-3">
+                                    <a routerLink='/login'>
+                                        {{ 'signUp.alreadyHaveAccount' | translate }} <span class="text-amber-500">{{ 'signUp.signIn' | translate }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center lg:w-4/12"
+                         style="background: linear-gradient(to right, #ff930f, #fff95b)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

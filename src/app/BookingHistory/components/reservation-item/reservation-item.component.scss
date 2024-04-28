@@ -1,0 +1,14 @@
+.btn-aceptar {
+    background-color: #ECAB0F; 
+    cursor: allowed; 
+}
+
+.btn-aceptar:disabled {
+    background-color: #D3D3D3; 
+    cursor: not-allowed;
+}
+
+.btn-aceptar:hover {
+    background-color: #F7D547; 
+    cursor: pointer;
+}

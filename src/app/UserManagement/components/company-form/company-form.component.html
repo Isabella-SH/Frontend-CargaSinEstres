@@ -1,0 +1,150 @@
+<app-toolbar-landing></app-toolbar-landing>
+
+<div class="h-full">
+    <div class="flex flex-wrap items-center justify-center">
+        <div class="w-full">
+            <div class="block bg-white">
+                <div class="g-0 lg:flex lg:flex-wrap">
+                    <div class="px-4 md:px-0 py-10 lg:w-8/12">
+                        <div class="flex flex-col text-center justify-center mt-5 mx-auto">
+                            <h1 class="text-black text-4xl font-bold mb-4">{{ 'companyForm.title' | translate }}</h1>
+                            <div class="flex justify-center items-center mb-7">
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                                <p class="mx-4">{{ 'companyForm.signUp' | translate }}</p>
+                                <hr class="w-[130px] border-t border-[#DBDBDB]">
+                            </div>
+
+                            <div class="max-w-2/3">
+                                <form [formGroup]="companyRegistrationForm" id="registro" action="" method="POST"
+                                      (ngSubmit)="onSubmit()">
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.companyName' | translate }}</mat-label>
+                                            <input matInput type="text" id="name" formControlName="name" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>RUC</mat-label>
+                                            <input matInput type="text" id="tic" formControlName="tic" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.address' | translate }}</mat-label>
+                                            <input matInput type="text" id="direction" formControlName="direction" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.phone' | translate }}</mat-label>
+                                            <input matInput type="text" id="phoneNumber"
+                                                   formControlName="phoneNumber" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.url' | translate }}</mat-label>
+                                            <input matInput type="text" id="logo" formControlName="logo" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.email' | translate }}</mat-label>
+                                            <input matInput type="email" id="email" formControlName="email" required autocomplete="email">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.password' | translate }}</mat-label>
+                                            <input matInput type="password" id="password" formControlName="password" autocomplete="new-password"
+                                                   required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-1/2">
+                                            <mat-label>{{ 'companyForm.confirmPassword' | translate }}</mat-label>
+                                            <input matInput type="password" id="confirmarpassword" autocomplete="new-password"
+                                                   formControlName="confirmarpassword" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="w-1/2 mx-auto mb-4">
+                                        <div>
+                                            <p class="mb-3">{{ 'companyForm.selectServices' | translate }}</p>
+                                            <div class="flex flex-col md:flex-row justify-center mb-3 md:gap-8">
+                                                <div class="flex items-baseline">
+                                                    <input class="mr-2 cursor-pointer" type="checkbox" name="transporte"
+                                                           formControlName="transporte" value="transporte"
+                                                           id="transporte">
+                                                    <label for="transporte">{{ 'companyForm.transport' | translate }}</label>
+                                                </div>
+                                                <div class="flex items-baseline">
+                                                    <input class="mr-2 cursor-pointer" type="checkbox" name="carga"
+                                                           formControlName="carga" value="carga" id="carga">
+                                                    <label for="carga">{{ 'companyForm.load' | translate }}</label>
+                                                </div>
+                                                <div class="flex items-baseline">
+                                                    <input class="mr-2 cursor-pointer" type="checkbox" name="embalaje"
+                                                           formControlName="embalaje" value="embalaje" id="embalaje">
+                                                    <label for="embalaje">{{ 'companyForm.packing' | translate }}</label>
+                                                </div>
+                                                <div class="flex items-baseline">
+                                                    <input class="mr-2 cursor-pointer" type="checkbox" name="montaje"
+                                                           formControlName="montaje" value="montaje" id="montaje">
+                                                    <label for="montaje">{{ 'companyForm.assembly' | translate }}</label>
+                                                </div>
+                                                <div class="flex items-baseline">
+                                                    <input class="mr-2 cursor-pointer" type="checkbox" name="desmontaje"
+                                                           formControlName="desmontaje" value="desmontaje"
+                                                           id="desmontaje">
+                                                    <label for="desmontaje">{{ 'companyForm.disassembly' | translate }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col">
+                                            <label for="description">{{ 'companyForm.description' | translate }}</label>
+                                            <textarea class="border border-amber-400" name="description"
+                                                      formControlName="description" rows="6"
+                                                      id="description">
+                                            </textarea>
+                                        </div>
+                                    </div>
+
+                                    <button class="hover:text-white border border-amber-400 hover:bg-amber-500
+                                                   focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium
+                                                   rounded mb-5 px-14 lg:px-32 py-2.5 text-center"
+                                    >
+                                        {{ 'companyForm.signUp' | translate }}
+                                    </button>
+
+                                    <div class="mb-3">
+                                        <a routerLink='/login'>
+                                            {{ 'companyForm.alreadyHaveAccount' | translate }} <span
+                                                class="text-amber-500">{{ 'companyForm.signIn' | translate }}</span>
+                                        </a>
+                                    </div>
+
+                                    <div id="errorMessages" class="text-red-600 text-sm" [innerHTML]="errorMessage">
+                                        <p>{{errorMessage}}</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center lg:w-4/12"
+                         style="background: linear-gradient(to right, #ff930f, #fff95b)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

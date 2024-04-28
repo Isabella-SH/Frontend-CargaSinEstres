@@ -1,0 +1,44 @@
+<p>
+    <button mat-icon-button mat-dialog-close class="btn-close">
+        <i class="fa fa-close"></i>
+    </button>
+</p>
+<p>
+    <mat-dialog-content>
+        <h1 class="flex">
+            <i class="fa-regular fa-message mr-2"></i> Chat
+        </h1>
+        <div *ngFor="let message of messages">
+            <div class="message-user">
+                <mat-card>
+                    <mat-card-content>
+                        <!-- Utiliza la propiedad 'user' de cada mensaje para diferenciar entre usuarios -->
+                        <div *ngIf="message.userType === 'client'">
+                            <b>Cliente</b>
+                        </div>
+                        <div *ngIf="message.userType === 'company'">
+                            <b>Compañía</b>
+                        </div>
+                        <p style="color: #9E9E9E; font-size: small; margin-bottom: 0px;">{{ message.messageDate }}</p>
+                        <p>{{ message.content }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <form #chatForm='ngForm'>
+            <div class="flex justify-between dialog-content">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <textarea class="textarea-message" matInput placeholder="Escriba aquí su mensaje..."
+                                  [(ngModel)]="chatData.message" name="message"></textarea>
+                    </mat-form-field>
+                </div>&nbsp;&nbsp;
+
+                <div>
+                    <button mat-raised-button class="btn-enviar-mensaje" (click)="sendMessage()">Enviar mensaje</button>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+</p>

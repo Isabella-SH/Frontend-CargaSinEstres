@@ -1,0 +1,142 @@
+<div class="flex flex-col py-10 justify-center mx-auto container max-w-full">
+
+    <div class="flex items-center">
+        <img src="assets/public-images/settingsIcon.png" alt="Settings" class="w-14 h-14 ml-32 mr-6">
+        <h1 class="text-black text-4xl font-bold mt-4 mb-3 mr-20">
+            Datos y Configuración de Mi Perfil
+        </h1>
+    </div>
+
+    <hr class="my-12 border-t-2 border-gray-300 ml-14 mr-14">
+
+    <form [formGroup]="companySettingsForm" id="registro" action="" method="POST" (ngSubmit)="onSubmit()">
+        <!-- Logo -->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1">Logo</h2>
+            </div>
+            <div class="w-full lg:w-1/2 lg:flex">
+                <div class="flex flex-col lg:w-1/2">
+                    <img src="{{company.logo}}" alt="company" class="flex flex-col md:flex-row items-center w-full p-2 mb-4" style="max-height: 300px; object-fit: contain; display: block;" >
+                </div>
+
+                <div class="flex flex-col lg:w-1/2 lg:ml-4">
+                    <label for="logo" class="mb-2">URL del logo</label>
+                    <input type="text" placeholder="https://" formControlName="logo" id="logo" required class="w-full p-2 mb-4">
+                </div>
+            </div>
+        </div>
+
+
+        <!--Cuenta-->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1">Cuenta</h2>
+            </div>
+            <div class="w-full lg:w-1/2 lg:flex flex-col"> 
+                <div class="lg:flex">
+                    <div class="flex flex-col lg:w-1/2">
+                        <label for="tic" class="mb-2">RUC</label>
+                        <input type="text" placeholder="{{company?.tic}}" formControlName="tic" id="tic" required class="w-full p-2 mb-4">
+                    </div>
+                    <div class="flex flex-col lg:w-1/2 lg:ml-4">
+                        <label for="name" class="mb-2">Nombre de la empresa</label>
+                        <input type="text" placeholder="{{company?.name}}" formControlName="name" id="name" required class="w-full p-2 mb-4">
+                    </div>
+                </div>
+
+                <label for="description" class="mb-2">Descripción de la empresa</label>
+                <textarea name="description" placeholder="{{company?.description}}" formControlName="description" rows="6"  id="description" class="w-full p-2 mb-4"></textarea>
+            </div>
+        </div>
+        <hr class="my-12 border-t-2 border-gray-300 ml-14 mr-14">
+
+        <!-- Servicios -->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1">Servicios</h2>
+            </div>
+            <div class="w-full lg:w-1/2 lg:flex flex-col">
+                <label class="mb-2">Servicios Actuales</label>
+                <div>
+                <label class="mb-2" style="color: gray; font-style: italic;">{{currentServicesLabel}}</label>
+                </div>
+                <br>
+                <label class="mb-2">Servicios Nuevos</label>
+                <div class="services-list">
+                    <div *ngFor="let service of services" class="service-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" [name]="service!.name" [checked]="isServiceSelected(service.id)" (change)="toggleServiceSelection(service.id)">
+                            <span class="checkmark"></span>
+                            {{ service!.name }}
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="my-12 border-t-2 border-gray-300 ml-14 mr-14">
+
+        <!-- Contacto -->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1">Contacto</h2>
+            </div>
+            <div class="w-full lg:w-1/2 lg:flex">
+                <div class="flex flex-col lg:w-1/2">
+                    <label for="email" class="mb-2">Email</label>
+                    <input type="text" placeholder="{{company?.email}}" formControlName="email" id="email" required class="w-full p-2 mb-4">
+                </div>
+                <div class="flex flex-col lg:w-1/2 lg:ml-4">
+                    <label for="phoneNumber" class="mb-2">Celular</label>
+                    <input type="text" placeholder="{{company?.phoneNumber}}" formControlName="phoneNumber" id="phoneNumber" required class="w-full p-2 mb-4">
+                </div>
+            </div>
+        </div>
+        <hr class="my-12 border-t-2 border-gray-300 ml-14 mr-14">
+        
+        <!-- Dirección -->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1">Ubicación</h2>
+            </div>
+        
+            <div class="w-full flex flex-col lg:w-1/2">
+                <label for="direction" class="mb-2">Dirección</label>
+                <input type="text" placeholder="{{company?.direction}}" formControlName="direction" id="direction" required class="w-full p-2 mb-4">
+            </div>
+        </div>
+        <hr class="my-12 border-t-2 border-gray-300 ml-14 mr-14">
+        
+        <!-- Contraseña -->
+        <div class="md:flex lg:flex mb-10 mx-32">
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-10">
+                <h2 class="text-black font-bold mt-1 mr-10">Cambiar contraseña</h2>
+            </div>
+
+            <div class="w-full lg:w-1/2 lg:flex">
+                <div class="flex flex-col lg:w-1/2">
+                    <label for="password" class="mb-2">Nueva Contraseña</label>
+                    <input type="password" placeholder="" formControlName="password" id="password" required class="w-full p-2 mb-4">
+                </div>
+                <div class="flex flex-col lg:w-1/2 lg:ml-4">
+                    <label for="confirmPassword" class="mb-2">Confirmar contraseña</label>
+                    <input type="Password" placeholder="" formControlName="confirmPassword" id="confirmPassword" required class="w-full p-2 mb-4">
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:mt-32 flex flex-col items-center lg:justify-between mx-32 lg:mx-48 lg:flex-row xl:mx-64">
+            <button id="submitButton" type="submit" class="text-black bg-amber-500 hover:bg-amber-300 font-medium rounded py-2.5 text-center w-full lg:w-1/2 px-4 mb-5 lg:mb-0 lg:mr-10">
+                Guardar cambios
+            </button>
+        
+            <button id="cancelButton" type="button" (click)="cancelar()" class="text-black bg-gray-400 hover:bg-gray-300 font-medium rounded py-2.5 text-center w-full lg:w-1/2 px-4 mb-5 lg:mb-0 lg:ml-10">
+                Cancelar
+            </button>
+        </div>
+        
+        
+        <div id="errorMessages" class="text-red-600 text-sm mx-32" [innerHTML]="errorMessage">{{errorMessage}}</div>
+    </form>
+</div>

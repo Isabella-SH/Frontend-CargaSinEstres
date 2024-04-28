@@ -1,0 +1,58 @@
+<app-toolbar-landing></app-toolbar-landing>
+
+<div class="h-full">
+    <div class="flex flex-wrap items-center justify-center">
+        <div class="w-full">
+            <div class="block bg-white">
+                <div class="min-h-screen g-0 lg:flex lg:flex-wrap">
+                    <div class="px-4 md:px-0 py-10 lg:w-8/12">
+                        <div class="flex flex-col text-center justify-center mt-5 mx-auto">
+                            <h1 class="text-black text-4xl font-bold mb-4">{{ 'login.title' | translate }}</h1>
+                            <div class="flex justify-center items-center mb-7">
+                                <hr class="min-w-1/2 w-[130px] border-t border-[#DBDBDB]">
+                                <p class="mx-4">{{ 'login.signIn' | translate }}</p>
+                                <hr class="min-w-1/2 w-[130px] border-t border-[#DBDBDB]">
+                            </div>
+
+                            <div class="max-w-2/3">
+                                <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-[360px]">
+                                            <mat-label>{{ 'login.email' | translate }}</mat-label>
+                                            <input matInput type="email" id="email" formControlName="email" autocomplete="current-email"  required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="mb-3">
+                                        <mat-form-field class="md:w-[360px]">
+                                            <mat-label>{{ 'login.password' | translate }}</mat-label>
+                                            <input matInput type="password" id="password" formControlName="password" autocomplete="current-password" required>
+                                        </mat-form-field>
+                                    </div>
+
+                                    <button class="hover:text-white border border-amber-400 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded mb-5 px-14 lg:px-32 py-2.5 text-center">
+                                        {{ 'login.signIn' | translate }}
+                                    </button>
+
+                                    <div class="mb-3">
+                                        <a routerLink='/sign-up'>{{ 'login.noAccount' | translate }} <span class="text-amber-500">{{ 'login.signUp' | translate }}</span></a>
+                                    </div>
+
+                                    <div id="errorMessages" class="text-red-600 text-sm" [innerHTML]="errorMessage">
+                                        <p>{{errorMessage}}</p>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center lg:w-4/12"
+                         style="background: linear-gradient(to right, #ff930f, #fff95b)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

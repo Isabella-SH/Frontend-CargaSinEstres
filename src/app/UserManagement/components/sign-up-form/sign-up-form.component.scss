@@ -1,0 +1,21 @@
+.cont-checkbox {
+  transition: transform 0.15s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      opacity: 1;
+      box-shadow: 0 0 0 3px #ffc107;
+
+      img {
+        -webkit-filter: none;
+        filter: none;
+      }
+    }
+  }
+}

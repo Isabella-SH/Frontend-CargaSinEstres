@@ -1,0 +1,28 @@
+<div class="min-h-screen">
+    <div class="flex flex-col py-10 justify-center mx-auto container max-w-screen-xl">
+        <h1 class="text-center text-black text-4xl font-bold mt-5 mb-4">
+            Historial de servicios
+        </h1>
+
+        <div class="my-12 md:mx-24">
+            <div class="flex justify-center">
+                <!-- Filter results -->
+                <mat-form-field class="w-full md:w-1/2" color="accent">
+                    <mat-label for="companyName">Buscar...</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" id="companyName">
+                </mat-form-field>
+            </div>
+
+            <div *ngIf="reservations.length > 0; else noPendingReservations">
+                <div *ngFor="let reservation of reservations">
+                    <app-reservation-item [reservation]="reservation" [userType]="userType"></app-reservation-item>
+                </div>
+            </div>
+            <ng-template #noPendingReservations>
+                <p class="text-center text-gray-500">El historial está vacío</p>
+            </ng-template>
+
+        </div>
+
+    </div>
+</div>
