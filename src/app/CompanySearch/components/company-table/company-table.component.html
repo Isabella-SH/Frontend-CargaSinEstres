@@ -41,7 +41,7 @@
                 <mat-label for="services">Tipo de servicio</mat-label>
                 <mat-select (selectionChange)="onServiceSelectionChange($event)" multiple>
                     <mat-option *ngFor="let service of servicesList" [value]="service"
-                                id="services">{{ service }}</mat-option>
+                                id="services">{{ service.name }}</mat-option>
                 </mat-select>
             </mat-form-field>
 

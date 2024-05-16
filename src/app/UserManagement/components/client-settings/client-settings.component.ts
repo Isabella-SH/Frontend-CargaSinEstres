@@ -72,7 +72,7 @@ export class ClientSettingsComponent {
 
     // Validar el formato de la fecha de nacimiento
     const dateOfBirthPattern = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateOfBirthPattern.test(formData.dateOfBirth)) {
+    if (formData.dateOfBirth!=null && !dateOfBirthPattern.test(formData.dateOfBirth)) {
       this._snackBar.open('El formato de la fecha de nacimiento debe ser aaaa-mm-dd', 'Cerrar', {
         duration: 5000, // Duración en milisegundos
       });

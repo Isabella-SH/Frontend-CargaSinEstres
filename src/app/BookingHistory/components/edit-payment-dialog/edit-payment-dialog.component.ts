@@ -42,7 +42,7 @@ export class EditPaymentDialogComponent {
         console.log("status:", status)
         this.cargaSinEstresDataService.updateReservationStatus(company.id, status, {}).subscribe((response: any) => {
             if (status === 're-scheduled') {
-                this._snackBar.open('La reserva ha sido reprogramada con éxito', 'Cerrar', {
+                this._snackBar.open('Se actualizó la información de la reserva con éxito', 'Cerrar', {
                     duration: 2000,
                 });
             }
@@ -67,7 +67,7 @@ export class EditPaymentDialogComponent {
         this.setReservationStatus(this.data.element, 're-scheduled');
       }
 
-      this._snackBar.open('Se cambió el pago de la reserva con éxito', 'Pago cambiado', {
+      this._snackBar.open('Se actualizó la información de la reserva con éxito', 'Cerrar', {
         duration: 2000, // Duración en milisegundos
       });
       this.dialogRef.close(this.data.element);
