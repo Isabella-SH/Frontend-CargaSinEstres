@@ -90,28 +90,31 @@ export class CompanyTableComponent {
     }
 
     /* FILTER: SEARCH BY SERVICES */
-    selectedServices: string[] = [];
-    servicesList: string[] = ['Transporte', 'Carga', 'Embalaje', 'Montaje', 'Desmontaje'];
+    selectedServices: number[] = [];
+    servicesList: { id: number, name: string }[] = [
+        { id: 1, name: 'Transporte' },
+        { id: 2, name: 'Carga' },
+        { id: 3, name: 'Embalaje' },
+        { id: 4, name: 'Montaje' },
+        { id: 5, name: 'Desmontaje' }
+    ];
 
 
     searchBySelectedServices() {
-        const filterValue = this.dataSource_company.filter; // Almacena el valor actual del filtro
-        this.dataSource_company.data = this.originalData.filter((company) => {
-            if (this.selectedServices.length > 0) { // Si se han seleccionado servicios
-                return this.selectedServices.every((selectedService) => {
-                    const serviceProperty = selectedService.toLowerCase() as keyof any;
-                    return company[serviceProperty] === true; //Si el servicio en la empresa es true, entonces se devuelve la empresa
-                });
-            } else {
-                return true;
-            }
-        });
+        if (this.selectedServices.length === 0) {
+            this.dataSource_company.data = this.originalData;
+        } else {
+            this.dataSource_company.data = this.originalData.filter(company => {
+                const servicioIds = company.servicios.map((servicio: any) => servicio.id);
+                return this.selectedServices.every(serviceId => servicioIds.includes(serviceId));
+            });
+        }
 
-        this.dataSource_company.filter = filterValue; //se restaura el valor del filtro para que se aplique el filtro de nombre
+        this.dataSource_company.filter = ''; 
     }
 
     onServiceSelectionChange(event: any) {
-        this.selectedServices = event.value; // Usa event.value para obtener un arreglo de los servicios seleccionados
+        this.selectedServices = event.value.map((service: { id: number, name: string }) => service.id);
         this.searchBySelectedServices();
     }
 
