@@ -33,12 +33,23 @@ export class ReservationHistoryComponent implements OnInit {
     }
 
     getOldReservations() {
-        this.companyDataService.getReservationByCompanyId(this.userId).subscribe((res: any) => {
-            this.reservations = res;
-            this.reservations = this.reservations.filter(reservation =>
-                reservation.status === 'finalized' || reservation.status === 'cancelled'
-            );
-        });
+        if(this.userType === 'client'){
+            this.companyDataService.getReservationByCustomerId(this.userId).subscribe((res: any) => {
+                this.reservations = res;
+                this.reservations = this.reservations.filter(reservation =>
+                    reservation.status === 'finalized' || reservation.status === 'cancelled'
+                );
+            });
+        }
+        else {
+            this.companyDataService.getReservationByCompanyId(this.userId).subscribe((res: any) => {
+                this.reservations = res;
+                this.reservations = this.reservations.filter(reservation =>
+                    reservation.status === 'finalized' || reservation.status === 'cancelled'
+                );
+            });
+        }
+
     }
 
     applyFilter(event: Event) {
