@@ -73,8 +73,7 @@ export class CargaSinEstresDataService {
     return this.http.patch(`${this.base_url}/reservations/${companyId}/status?status=${status}`, JSON.stringify(data), this.httpOptions);
   }
 
-//update payment
-  //http://localhost:8080/api/v1/reservations/1/price-startDate-startTime-status?price=10&startDate=2024-05-06&startTime=10%3A30&status=to%20be%20schedule
+  //update payment
   updateReservationPayment(id: any, price:any, startDate: any, startTime:any): Observable<Reservation> {
     if (startDate instanceof Date) {
       startDate = startDate.toISOString().split('T')[0];
