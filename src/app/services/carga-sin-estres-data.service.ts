@@ -16,8 +16,7 @@ export class CargaSinEstresDataService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlQGdtYWlsLmNvbSIsImlhdCI6MTcwMDY4MjY4NCwiZXhwIjoxNzA5MDAyNjg0LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.5fJ4KkmgMiPQj0jQs8Ss7LslBJ9mxpS6CeyJTNvnbDY`
+      'Content-Type': 'application/json'
     })
   }
 
