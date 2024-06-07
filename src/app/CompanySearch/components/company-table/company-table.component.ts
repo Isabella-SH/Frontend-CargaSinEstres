@@ -6,7 +6,7 @@ import {ActivatedRoute} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {CompanyDetailComponent} from "../company-detail/company-detail.component";
 import {CargaRapidaDialogComponent} from "../cargaRapida-dialog/cargaRapida-dialog.component";
-
+import {Company} from "../../../models/company.model";
 
 @Component({
     selector: 'app-company-table',
@@ -46,32 +46,20 @@ export class CompanyTableComponent {
     }
 
     getAllCompanies() {
-        this.companyDataService.getAllCompanies().subscribe((res: any) => {
+        this.companyDataService.getAllCompanies().subscribe((res: any[]) => {
             this.originalData = res;
-            this.dataSource_company.data = res;
 
-            /*const observables = this.dataSource_company.data.map((company: any) => {
-              return this.companyDataService.searchExistingMembership(company.id);
-            });
-
-            forkJoin(observables).subscribe((results: boolean[]) => {
-              this.dataSource_company.data.forEach((company: any, index: number) => {
-                const hasMembership = results[index];
-                company.hasMembership = hasMembership;
-                company.rowStyle = hasMembership ? 'golden-background' : 'default-background';
-              });
-
-              // Ahora que se han completado todas las llamadas
-              this.dataSource_company.data.sort((a: any, b: any) => {
+            this.originalData.sort((a: Company, b: Company) => {
                 if (a.hasMembership && !b.hasMembership) {
-                  return -1; // a viene antes que b
+                    return -1;
                 } else if (!a.hasMembership && b.hasMembership) {
-                  return 1; // b viene antes que a
+                    return 1;
+                } else {
+                    return 0;
                 }
-                return 0; // sin cambios en el orden
-              });
-
-            });*/
+            });
+            
+            this.dataSource_company.data = this.originalData;
 
             this.searchBySelectedServices();
             this.searchByLocation();
@@ -99,7 +87,6 @@ export class CompanyTableComponent {
         { id: 5, name: 'Desmontaje' }
     ];
 
-
     searchBySelectedServices() {
         if (this.selectedServices.length === 0) {
             this.dataSource_company.data = this.originalData;
@@ -120,9 +107,9 @@ export class CompanyTableComponent {
 
 
     /* FILTER: SEARCH BY LOCATION */
-    searchMethod: string = 'noFilter'; // Opción predeterminada <----------------//Membreship
-    manualLocation: string = ''; // Ubicación manual ingresada por el usuario
-    userLocation: string = ''; // Ubicación del usuario
+    searchMethod: string = 'noFilter'; 
+    manualLocation: string = ''; 
+    userLocation: string = '';
     userFullName: string = ''
 
 
@@ -169,5 +156,3 @@ export class CompanyTableComponent {
     }
 
 }
-
-
