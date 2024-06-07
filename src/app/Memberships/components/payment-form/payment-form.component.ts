@@ -67,12 +67,10 @@ export class PaymentFormComponent {
             price: this.selectedPlan.price
         };
 
-        console.log("Test", this.newMembership);
-
         this.dataService.createMembership(this.companyId, this.newMembership).subscribe(
             (response) => {
                 this._snackBar.open('Suscripción creada con éxito', 'Cerrar', {
-                    duration: 2000, // Duración en milisegundos
+                    duration: 2000,
                 });
             }
         );
