@@ -1,7 +1,7 @@
 export const environment = {
     development: false,
-    baseURL_Users: 'https://user-service-cse.azurewebsites.net',
-    baseURL_Bussiness: 'https://business-service.azurewebsites.net',
+    baseURL_Users: 'https://user-service-v3.azurewebsites.net/api/v1',
+    baseURL_Bussiness: 'https://business-service-v4.azurewebsites.net/api/v1',
 
     firebaseConfig : {
         apiKey: "AIzaSyA0d_Pt39uLmE3H01_5DwrkYuryIK9fjw0",
